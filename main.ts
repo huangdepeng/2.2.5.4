@@ -883,7 +883,7 @@ namespace Sensor {
     //% red.min=0 red.max=255
     //% green.min=0 green.max=255
     //% blue.min=0 blue.max=255
-    export function hicbit_setPixelRGB(port: hicbit_Port, lightoffset: hicbitLightsBelt, red: number, green: number, blue: number) {
+    export function hicbit_setPixelRGB(port: hicbit_Port, lightoffset: hicbitLight, red: number, green: number, blue: number) {
         switch (port) {
             case hicbit_Port.port1:
                 if (!lhRGBLight) {

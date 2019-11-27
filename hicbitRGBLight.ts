@@ -42,26 +42,10 @@ enum hicbitLight {
     Light2 = 0x01,
     //% block="Light 3"
     Light3 = 0x02,
-    //% block="Light 4"
-     Light4 = 0x03,
-    //% block="Light 5"
-     Light5 = 0x04,
-    //% block="Light 6"
-     Light6 = 0x05,
     //% block="All"
-     All = 0x06
+    All = 0x03
 }
 
-enum hicbitLightsBelt {
-        //% block="Light 1"
-        Light1 = 0x00,
-        //% block="Light 2"
-        Light2 = 0x01,
-        //% block="Light 3"
-        Light3 = 0x02,
-        //% block="All"
-        All = 0x03
-}
 
 /**
  * Different modes for RGB or RGB+W RGBLight QbitRGBColors
@@ -139,7 +123,7 @@ namespace hicbitRGBLight {
             
         }
 
-        private setPixelRGB(pixeloffset: number, tureRgb: number): void {
+        private setPixelRGB(pixeloffset: number, rgb: hicbitRGBColors): void {
             if (pixeloffset < 0
                 || pixeloffset >= this._length)
                 return;
@@ -236,7 +220,7 @@ namespace hicbitRGBLight {
         return light;
     }
 
-    export function packRGB(a: number, b: number, c: number): number {
+    function packRGB(a: number, b: number, c: number): number {
         return ((a & 0xFF) << 16) | ((b & 0xFF) << 8) | (c & 0xFF);
     }
     function unpackR(rgb: number): number {
